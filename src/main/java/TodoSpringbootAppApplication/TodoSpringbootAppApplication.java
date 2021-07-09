@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import todoRepository.TodoRepository;
 
-
 @Repository
 @Service
 @SpringBootApplication
@@ -30,7 +29,7 @@ public class TodoSpringbootAppApplication implements CommandLineRunner{
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) throws Exception{
 
         Collection<Todo> todos = Arrays.asList(new Todo("Learn Spring", "Yes"),
                                                 new Todo("Learn Driving", "No"),

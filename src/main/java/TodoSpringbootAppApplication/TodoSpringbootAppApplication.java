@@ -8,8 +8,13 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import domain.Todo;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import todoRepository.TodoRepository;
 
+
+@Repository
+@Service
 @SpringBootApplication
 public class TodoSpringbootAppApplication implements CommandLineRunner{
 

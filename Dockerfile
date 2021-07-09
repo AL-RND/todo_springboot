@@ -1,7 +1,14 @@
-FROM openjdk:16-jdk-slim
-ADD todo_springboot.iml
-ARG JVM_OPTS
-ENV JVM_OPTS=${JVM_OPTS}
+# syntax=docker/dockerfile:1
+FROM openjdk:16
 
-CMD java ${JVM_OPTS} -jar app.jar
-ENTRYPOINT ["java" ,"TodoSpringbootAppApplication" ]
+WORKDIR /todo_springboot
+
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+
+RUN ./mvnw dependency:go-offline
+
+COPY src ./src
+
+CMD ["./mvnw", "spring-boot:run"]
+

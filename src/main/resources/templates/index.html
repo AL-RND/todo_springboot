@@ -10,18 +10,20 @@
             margin-top: 50px;
         }
     </style>
-    <link rel="stylesheet" href="../static/welcome.css">
+    <link rel="stylesheet" href="./welcome.css">
 </head>
 <body>
 <section id="todocontainer">
     <h2 style="padding-top: 30px; padding-bottom: 20px;" class="text-center">Welcome to Workload Manager</h2>
     <div class="d-flex justify-content-center">
         <form th:action="@{/todos}" method="GET" enctype="multipart/form-data">
-            <section3>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success btn-lg text-white" style="height:120px; width:300px;">View Todos</button>
-            </div>
-            </section3>
+            <section class="section3">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg text-white" style="height:120px; width:300px;">
+                        View Todos
+                    </button>
+                </div>
+            </section>
         </form>
     </div>
     <div class="developed">Developed by Aleksandar Randjic & Fatih Cavusoglu</div>

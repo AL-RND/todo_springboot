@@ -1,6 +1,6 @@
 # This todo_springboot repository is a code for a Workload Manager
 
->The Workload Manager is a small Ticket Tool and is not as complex as a business ticket system for enterprise workspaces.
+>The Workload Manager is a small ticket tool and is not as complex as a business ticket system for enterprise workspaces.
 
 **Used techologies**
 
@@ -25,3 +25,8 @@
 >As soon as you are on the application side, you can already operate the Workload Manager. You create a ticket and press Add Todo. The default status of the ticket always remains Open, as long as you do not change the status in the table on the Update button. From then on, you can update the status to "inProgress" if you are working on it, or to "Done" if the work is done. The ID No. 1 always remains as an example that shows how the ticket will look like.
 
 ![alt text](https://github.com/AL-RND/todo_springboot/blob/37d5eb786c33d581026074a9a300443510f0d01c/src/main/resources/static/images/applikationpage.jpg)
+
+>For the future a login option should be created, where you have to log in with an e-mail address and a password and an authetification takes place.
+
+>**link to clone the repository in your IDE:**
+$ git clone https://github.com/AL-RND/todo_springboot.git

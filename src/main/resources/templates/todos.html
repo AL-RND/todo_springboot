@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:https="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <meta charset="UTF-8">
@@ -12,26 +13,26 @@
         }
     </style>
     <link rel="stylesheet" href="./style.css">
+
     <script src="./index.js"></script>
 </head>
 <body>
 <section id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 class="navbar-brand" href="#">Workload today</h1>
+        <h1 class="navbar-brand">WorkLoad Manager</h1>
     </nav>
 </section>
-
-<section class="section2">
+<!--<section class="section2">
     <nav>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a2 class="nav-link" th:href="@{/logout}">Logout</a2>
+                    <a class="nav-link" href="index.html">Logout</a>  // The button is in work for the future!!
                 </li>
             </ul>
         </div>
     </nav>
-</section>
+</section>-->
 
 <section id="todocontainer" class="section1">
 
@@ -41,11 +42,38 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Todo</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Update</th>
-                    <th scope="col">Delete</th>
+                    <th style="color: blueviolet" scope="col">Id</th>
+                    <th style="color: blueviolet"  scope="col">Todo</th>
+                    <th style="color: blueviolet"  scope="col">Status</th>
+                    <th style="color: blueviolet"  scope="col">Update</th>
+                    <th style="color: blueviolet"  scope="col">Delete</th>
+
+                    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <section class="section5">
+                                    <div class="modal-body">
+                                        <form th:action="@{/todoNew}" method="POST" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="todoItem" style="font-weight: bolder; color: blueviolet">Create Todos</label>
+                                                <section class="section6">
+                                                    <input id="todoItem" type="text" class="form-control" name="todoItem" aria-describedby="emailHelp"
+                                                           placeholder="Enter Todo">
+                                                </section>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="status">Status</label>
+                                                <select id="status" class="" name="status">
+                                                    <option>Open</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" style="background-color: lightgrey">Add Todo</button>
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
                 </tr>
                 </thead>
                 <tbody>
@@ -65,7 +93,7 @@
                         <form th:action="@{/todoDelete/{id}(id=${todo.id})}" method="POST"
                               enctype="multipart/form-data">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-danger btn-sm text-white">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm text-white" style="background-color: orangered">Delete</button>
                             </div>
                         </form>
                     </td>
@@ -76,49 +104,12 @@
     </div>
 </section>
 
-<section class="section4">
-    <div class="d-flex justify-content-center">
-        <a class="btn btn-success btn-lg text-white" data-toggle="modal" data-target="#viewModal">Add New Todo</a>
-    </div>
-
-
+<div>
     <div class="col-md-2"></div>
-
-</section>
-<!-- View Modal -->
-<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!--<h5 class="modal-title" id="exampleModalLabel">TODO</h5>-->
-
-                <section class="section5">
-                    <div class="modal-body">
-                        <form th:action="@{/todoNew}" method="POST" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="todoItem">Todo</label>
-                                <input id="todoItem" type="text" class="form-control" name="todoItem" aria-describedby="emailHelp"
-                                       placeholder="Enter Todo">
-                            </div>
-                            <div class="form-group">
-                                <label for="status">Status</label>
-                                <select id="status" class="form-control" name="status">
-                                    <option>Done</option>
-                                    <option>In progress</option>
-                                    <option>Open</option>
-                                    <option>Urgent</option>
-                                </select>
-                            </div>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Add Todo</button>
-                        </form>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
 </div>
+<!-- View Modal -->
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

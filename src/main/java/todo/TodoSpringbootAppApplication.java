@@ -31,10 +31,7 @@ public class TodoSpringbootAppApplication implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception{
 
-        Collection<Todo> todos = Arrays.asList(new Todo("Learn Spring", "Yes"),
-                                                new Todo("Learn Driving", "No"),
-                                                new Todo("Go for a Walk", "No"),
-                                                new Todo("Cook Dinner", "Yes"));
+        Collection<Todo> todos = Arrays.asList(new Todo("Example", "in Progress"));
         todos.forEach(todoRepository::save);
 
     }

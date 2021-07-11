@@ -49,16 +49,19 @@ public class TodoController {
     @PostMapping("/todoUpdate/{id}") //endpoint toggles a specific_todo_status
     public String update(@PathVariable long id, Model model) {
         Todo todo = todoRepository.findById(id).get();
-        if("Yes".equals(todo.getCompleted())) {
-            todo.setCompleted("No");
-        }
-        else {
-            todo.setCompleted("Yes");
+        if ("Done".equals(todo.getCompleted())) {
+            todo.setCompleted("inProgress");
+        } else {
+            todo.setCompleted("Done");
         }
         todoRepository.save(todo);
         model.addAttribute("todos", todoRepository.findAll());
         return "redirect:/todos";
     }
 }
+
+
+
+
 
 //Mapping for the HTML data

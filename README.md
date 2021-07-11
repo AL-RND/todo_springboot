@@ -2,15 +2,15 @@
 
 >The Workload Manager is a small Ticket Tool and is not as complex as a business ticket system for enterprise workspaces.
 
-***1. Spring Boot
-**2. Spring Data JPA
-**3. H2 In-memory database
-**3. BootStrap
-**4. Thymeleaf
-**5. Spring Tool Suite (STS)
-**6. Docker**
+**Used techologies**
 
-
+1. Spring Boot
+2. Spring Data JPA
+3. H2 In-memory database
+4. BootStrap
+5. Thymeleaf
+6. Spring Tool Suite (STS)
+7. Docker
 
 
 >This is the initial first page when you enter the localhost under port 8080 in your browser

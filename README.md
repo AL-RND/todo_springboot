@@ -1,13 +1,13 @@
 # This todo_springboot repository is a code for a Workload Manager
 
-The Workload Manager is a small Ticket Tool and is not as complex as a Bussines Ticket System for enterprise workspaces.
+>The Workload Manager is a small Ticket Tool and is not as complex as a business ticket system for enterprise workspaces.
 
 
-This is the initial first page when you enter the localhost under port 8080 in your browser
+>This is the initial first page when you enter the localhost under port 8080 in your browser
 
 ![alt text](https://github.com/AL-RND/todo_springboot/blob/bef1d9898515c5c5d095eba49fef5f5c9488b56f/src/main/resources/static/images/startpage.jpg)
 
-By clicking on the View todos, the tool opens
+>By clicking on the View todos, the tool opens
 
 
 ## **Descrition of the Tool with the "L" look**
